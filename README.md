@@ -27,7 +27,6 @@ You can see DEMO juste here : [Parent](https://codesandbox.io/s/vanilla-iframe-p
 There's available on demo folder too.
 
 ### FLOW
-![img.png](sequence_diagram.png)
 
 ```mermaid
 sequenceDiagram
