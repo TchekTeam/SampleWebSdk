@@ -3,6 +3,20 @@ Hi! Welcome to Tchek Documentation
 
 The **Tchek PWA** is a web alternative to the native mobile application (iOS/Android).
 
+## Generate SSO
+
+Get your unique temporary token by using the following request
+````
+curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' \
+--header 'X-API-Key: <PERSONAL_API_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "deviceId" : null,
+    "validity" : 5,
+    "tchekId" : "xXxXXxXXxx"
+}'
+````
+
 ## Usage
 
 Install modules
@@ -10,7 +24,7 @@ Install modules
 npm install
 ````
 
-Run demo after replaced `<ssoToken>` with your personal sso token in `/index.html`
+Run demo after replaced `<TXXXXXX>` with your personal sso token in `/index.html`
 ````
 npm run start
 ````
@@ -18,7 +32,7 @@ npm run start
 ## How It's work ?
 There two ways to access to the app :
 - by `/auth/login` global route
-- by `/sso?token=<yourTokenId>` with your unique temporary access token
+- by `/sso?token=<TXXXXXX>` with your unique temporary access token
 
 With the temporary access token, you will be automatically redirected to the first page you access with it.
 Access to features are customizable per token :
