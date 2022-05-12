@@ -1,46 +1,9 @@
-# Tchek PWA
+# Tchek SSO/PWA
 Hi! Welcome to Tchek Documentation
 
 The **Tchek PWA** is a web alternative to the native mobile application (iOS/Android).
 
-## Generate SSO
-
-Get your unique temporary token by using the following request
-````
-curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' \
---header 'X-API-Key: <PERSONAL_API_TOKEN>' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "deviceId" : <uuid()>,
-    "validity" : 5, // in days
-    "tchekId" : "xXxXXxXXxx" // optional
-}'
-````
-````
-/* curl response */
-{
-  "uid": "T010203",
-  "expired": false,
-  "expiresIn": "12 May 2022 at 10:10:00 UTC",
-  "options": "{"fastTrack": true, "shootInspect": true, "cost": false, "report": true, "downloadRoi": false}"
-}
-````
-For access to a specific web report, set the tchekId in request and use the `uid` object from response for build url
-````
-https://liveapi.tchek.ai/fr/report?token=T010203
-````
-
-## Usage Demo
-
-Install modules
-````
-npm install
-````
-
-Run demo after replaced `<TXXXXXX>` with your personal sso token in `/index.html`
-````
-npm run start
-````
+*_Supported languages: `FR`|`EN`_
 
 ## How It's work ?
 There two ways to access to the app :
@@ -55,6 +18,49 @@ Access to features are customizable per token :
 |Shoot-Inspect   	|Always							|only if enabled on token		|
 |Fast-Track      	|Always							|only if enabled on token		|
 |Report          	|Always							|only if enabled on token 		|
+
+
+## Generate SSO
+
+Get your unique temporary token by using the following request
+````
+curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' \
+--header 'X-API-Key: <PERSONAL_API_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "deviceId" : <uuid()>,
+    "validity" : 5, // in days
+    "tchekId" : "xXxXXxXXxx", // optional
+    "options": "{"shootInspect": true, "fastTrack": true, "report": true, "cost": false, "downloadRoi": false}"
+}'
+````
+````
+/* curl response */
+{
+  "uid": "T010203",
+  "expired": false,
+  "expiresIn": "12 May 2022 at 10:10:00 UTC",
+  "options": "{"shootInspect": true, "fastTrack": true, "report": true, "cost": false, "downloadRoi": false}"
+}
+````
+
+## Generate Report Url
+For access to a specific web report, set the tchekId in request and use the `uid` object from response for build url
+````
+https://liveapi.tchek.ai/<lang>/report?token=T010203
+````
+
+## Usage PWA
+
+Install modules
+````
+npm install
+````
+
+Run demo after replaced `<TXXXXXX>` with your personal sso token in `/index.html`
+````
+npm run start
+````
 
 ### Events
 At the end of any step, you'll receive an **event message** from the application.
