@@ -11,13 +11,26 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 --header 'X-API-Key: <PERSONAL_API_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "deviceId" : null,
-    "validity" : 5,
-    "tchekId" : "xXxXXxXXxx"
+    "deviceId" : <uuid()>,
+    "validity" : 5, // in days
+    "tchekId" : "xXxXXxXXxx" // optional
 }'
 ````
+````
+/* curl response */
+{
+  "uid": "T010203",
+  "expired": false,
+  "expiresIn": "12 May 2022 at 10:10:00 UTC",
+  "options": "{"fastTrack": true, "shootInspect": true, "cost": false, "report": true, "downloadRoi": false}"
+}
+````
+For access to a specific web report, set the tchekId in request and use the `uid` object from response for build url
+````
+https://liveapi.tchek.ai/fr/report?token=T010203
+````
 
-## Usage
+## Usage Demo
 
 Install modules
 ````
@@ -45,17 +58,16 @@ Access to features are customizable per token :
 
 ### Events
 At the end of any step, you'll receive an **event message** from the application.
-In Vanilla Javascript, you can use an **event listener** for catch every events returned by the iframe :
+In Vanilla Javascript, you can use the native **event listener** for catching every event returned by the iframe :
 ````
 document.addEventListener("DOMContentLoaded", function () {
      window.addEventListener("message", function (e) {
-         const data = JSON.parse(e.data);
-         console.log(data);
+         console.log(JSON.parse(e.data));
      });
  });
 ````
 ````
-/* data */
+/* console.log(data) */
 {
     "status": 200,
     "message": "Tchek successfully created !",
