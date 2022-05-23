@@ -31,7 +31,11 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
     "deviceId" : <uuid()>,
     "validity" : 5, // in days
     "tchekId" : "xXxXXxXXxx", // optional
-    "options": "{"shootInspect": true, "fastTrack": true, "report": true, "cost": false, "downloadRoi": false}"
+    "shootInspect": true,
+    "fastTrack": true,
+    "report": true,
+    "cost": false,
+    "downloadRoi": false
 }'
 ````
 ````
