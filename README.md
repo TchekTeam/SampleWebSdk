@@ -1,7 +1,7 @@
-# Tchek SSO/PWA
+# Tchek SSO/WEB_SDK
 Hi! Welcome to Tchek Documentation
 
-The **Tchek PWA** is a web alternative to the native mobile application (iOS/Android).
+The **Tchek WEB SDK** is a web alternative to the native mobile application (iOS/Android).
 
 *_Supported languages: `FR`|`EN`_
 
@@ -51,7 +51,7 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 ## Generate Report Url
 For access to a specific web report, set the tchekId in request and use the `uid` object from response for build url
 ````
-https://liveapi.tchek.ai/<lang>/report?token=T010203
+https://webapp.tchek.ai/<lang>/report?token=T010203
 ````
 
 ## Usage PWA
@@ -106,6 +106,6 @@ deactivate  WEBSITE
 ```
 
 ### Links
-[PWA website](https://pwa.tchek.fr/en/pwa/home)
+[WEB SDK website](https://webapp.tchek.fr/en/pwa/home)
 
 [API Documentation](https://alto.tchek.fr/api-docs)
