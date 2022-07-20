@@ -19,6 +19,8 @@ Access to features are customizable per token :
 |Fast-Track      	|Always							|only if enabled on token		|
 |Report          	|Always							|only if enabled on token 		|
 
+<img src="https://github.githubassets.com/images/icons/emoji/unicode/2139.png" alt="drawing" width="15"/>
+It's recommended to use the SDK in an iframe
 
 ## Generate SSO
 
@@ -54,7 +56,7 @@ For access to a specific web report, set the tchekId in request and use the `uid
 https://webapp.tchek.ai/<lang>/report?token=T010203
 ````
 
-## Usage PWA
+## Usage WEB SDK
 
 Install modules
 ````
