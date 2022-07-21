@@ -8,7 +8,7 @@ The **Tchek WEB SDK** is a web alternative to the native mobile application (iOS
 ## How It's work ?
 There two ways to access to the app :
 - by `/auth/login` global route
-- by `/sso?token=<TXXXXXX>` with your unique temporary access token
+- by `/sso/intro-shoot-inspect?token=<TXXXXXX>` with your unique temporary access token
 
 With the temporary access token, you will be automatically redirected to the first page you access with it.
 Access to features are customizable per token :
