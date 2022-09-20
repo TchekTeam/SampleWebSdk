@@ -46,12 +46,12 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
         "sendingType" : 0 // optional if not using dashboard
     },
     "customer" : {
-		"clientType": "customer",
-		"email": "john.doe@company.io",
-		"firstname": "john",
-		"gender":  "male",
-		"lastname":  "doe",
-		"phone":  "0601020304"
+	"clientType": "customer",
+	"email": "john.doe@company.io",
+	"firstname": "john",
+	"gender":  "male",
+	"lastname":  "doe",
+	"phone":  "0601020304"
     }
 }
 }'
