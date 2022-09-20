@@ -29,7 +29,7 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 --header 'X-API-Key: <PERSONAL_API_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "deviceId" : <uuid()>,
+    "deviceId" : <uuid()>, // optional: unique id from uuid() library or from unique mobile id
     "validity" : 5, // in days
     "tchekId" : "xXxXXxXXxx", // optional if new trade in
     "options" : {
