@@ -52,7 +52,6 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 	"lastname":  "doe",
 	"phone":  "0601020304"
     }
-}
 }'
 ````
 ````
