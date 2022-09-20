@@ -36,8 +36,8 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
     "options" : {
         "shootInspect" : true,
         "fastTrack" : true,
-        "cost" : false,
         "report" : true,
+	"cost" : false,
         "downloadRoi" : false
     },
     "tradeIn" : {
