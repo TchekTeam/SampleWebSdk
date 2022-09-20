@@ -32,20 +32,36 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 --data-raw '{
     "deviceId" : <uuid()>,
     "validity" : 5, // in days
-    "tchekId" : "xXxXXxXXxx", // optional
-    "shootInspect": true,
-    "fastTrack": true,
-    "report": true,
-    "cost": false,
-    "downloadRoi": false
+    "tchekId" : "xXxXXxXXxx", // optional if new trade in
+    "options" : {
+        "shootInspect" : true,
+        "fastTrack" : true,
+        "cost" : false,
+        "report" : true,
+        "downloadRoi" : false
+    },
+    "tradeIn" : {
+        "tradeinVehicle" : true, // optional if not using dashboard
+        "immat" : "DJ624RS", // optional if not using dashboard
+        "sendingType" : 0 // optional if not using dashboard
+    },
+    "customer" : {
+		"clientType": "customer",
+		"email": "john.doe@company.io",
+		"firstname": "john",
+		"gender":  "male",
+		"lastname":  "doe",
+		"phone":  "0601020304"
+    }
+}
 }'
 ````
 ````
-/* curl response */
+/* curl response example */
 {
   "uid": "T010203",
   "expired": false,
-  "expiresIn": "12 May 2022 at 10:10:00 UTC",
+  "expiresIn": "01 Jan 2042 at 10:10:00 UTC",
   "options": "{"shootInspect": true, "fastTrack": true, "report": true, "cost": false, "downloadRoi": false}"
 }
 ````
