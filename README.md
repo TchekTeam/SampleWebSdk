@@ -3,7 +3,7 @@ Hi! Welcome to Tchek Documentation
 
 The **Tchek WEB SDK** is a web alternative to the native mobile application (iOS/Android).
 
-*_Supported languages: `FR`|`EN`_
+*_Supported languages: `FR`|`EN`|`DE`_
 
 ## How It's work ?
 There two ways to access to the app :
