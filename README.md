@@ -29,9 +29,9 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 --header 'X-API-Key: <PERSONAL_API_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "deviceId" : <uuid()>, // optional: unique id from uuid() library or from unique mobile id
-    "validity" : 5, // in days
-    "tchekId" : "xXxXXxXXxx", // optional if new trade in
+    "deviceId" : <uuid()>, // optional: unique id from uuid() library or from mobile device id (IDFA for iOS or AAID for Android)
+    "validity" : ∞, // in days
+    "tchekId" : "xXxXXxXXxx", // empty if new trade in
     "options" : {
         "shootInspect" : true,
         "fastTrack" : true,
@@ -42,7 +42,7 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
     "tradeIn" : {
         "tradeinVehicle" : true, // optional if not using dashboard
         "immat" : "DJ624RS", // optional if not using dashboard
-        "sendingType" : 0 // optional if not using dashboard
+        "sendingType" : 0 // optional if not using dashboard (0: Email | 1: SMS)
     },
     "customer" : {
 	"clientType": "customer",
@@ -57,9 +57,9 @@ curl --location --request POST 'https://alto.tchek.fr/apiV1/tokenmanager/token' 
 ````
 /* curl response example */
 {
-  "uid": "T010203",
+  "uid": "T000042",
   "expired": false,
-  "expiresIn": "01 Jan 2042 at 10:10:00 UTC",
+  "expiresIn": "01 Jan 2100 at 10:10:10 UTC",
   "options": "{"shootInspect": true, "fastTrack": true, "report": true, "cost": false, "downloadRoi": false}"
 }
 ````
